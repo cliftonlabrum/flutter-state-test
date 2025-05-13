@@ -42,10 +42,7 @@ class ModelStuff with ChangeNotifier {
   //MARK: Add Item
   add() {
     if (controller.text.isEmpty) return;
-    final item = Item();
-    item.id = 100;
-    item.title = controller.text;
-    item.completed = true;
+    final item = Item(id: 100, title: controller.text, completed: true);
 
     List<Item> ready = List.from(items);
     ready.insert(0, item);
