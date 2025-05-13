@@ -50,5 +50,6 @@ class ModelStuff with ChangeNotifier {
     items = ready;
     //Clear textfield
     controller.text = '';
+    title = 'Watch It (${items.length})';
   }
 }
