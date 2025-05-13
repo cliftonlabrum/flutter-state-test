@@ -16,3 +16,8 @@ final class StuffEventSetItems extends StuffEvent {
   final List<Item>? items;
   StuffEventSetItems({this.items});
 }
+
+final class StuffEventAddItem extends StuffEvent {
+  final String addItem;
+  StuffEventAddItem(this.addItem);
+}

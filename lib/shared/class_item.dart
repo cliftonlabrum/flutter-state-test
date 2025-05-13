@@ -4,6 +4,11 @@ class Item {
   int id = 0;
   String title = '';
   bool completed = false;
+
+  @override
+  toString() {
+    return 'id: $id, title: $title, completed: $completed';
+  }
 }
 
 class MakeItems {

@@ -5,6 +5,8 @@ class WidgetBloc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
+
     return BlocProvider(
       create: (context) => StuffBloc(title: 'Bloc', flag: false, items: []),
       child: BlocBuilder<StuffBloc, StuffState>(
@@ -16,7 +18,7 @@ class WidgetBloc extends StatelessWidget {
             title: bloc.title,
             flag: bloc.flag,
             items: bloc.items,
-            controller: TextEditingController(text: 'todo'),
+            controller: controller,
             toggleFlag: () {
               bloc.add(StuffEventSetFlag());
             },
@@ -24,7 +26,9 @@ class WidgetBloc extends StatelessWidget {
               bloc.add(StuffEventSetItems());
             },
             onAdd: () {
-              //TODO: Get the value from the TextEditingController and add an item to the list
+              //Add Item
+              if (controller.text.isEmpty) return;
+              bloc.add(StuffEventAddItem(controller.text));
             },
           );
         },
