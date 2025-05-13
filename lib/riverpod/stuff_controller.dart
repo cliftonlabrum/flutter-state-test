@@ -21,12 +21,13 @@ class StuffController extends _$StuffController {
     final newItems = model.items;
     newItems.addAll(MakeItems.go());
     final newModel = RiverpodPageModel(title: 'Riverpod (${newItems.length})', flag: model.flag, items: newItems);
-
+    model = newModel;
     state = AsyncValue.data(newModel);
   }
 
   void toggleFlag() {
     final newModel = RiverpodPageModel(title: model.title, flag: !model.flag, items: model.items);
+    model = newModel;
     state = AsyncValue.data(newModel);
   }
 
@@ -41,6 +42,7 @@ class StuffController extends _$StuffController {
     newItems.insert(0, item);
     final newModel = RiverpodPageModel(title: 'Riverpod (${newItems.length})', flag: model.flag, items: newItems);
     textController.clear();
+    model = newModel;
     state = AsyncValue.data(newModel);
   }
 }
