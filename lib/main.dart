@@ -1,4 +1,4 @@
-import 'package:flutter_state_test/global.dart';
+import 'package:flutter_state_test/shared/global.dart';
 
 void main() {
   //Register watch_it model

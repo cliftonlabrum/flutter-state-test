@@ -1,4 +1,4 @@
-import 'package:flutter_state_test/global.dart';
+import 'package:flutter_state_test/shared/global.dart';
 
 class Stuff extends StatelessWidget {
   final String title;
@@ -28,7 +28,7 @@ class Stuff extends StatelessWidget {
         children: [
           Row(
             children: [
-              //MARK: Flag
+              //MARK: Toggle Flag
               IconButton(
                 onPressed: () {
                   toggleFlag();
@@ -40,7 +40,7 @@ class Stuff extends StatelessWidget {
               ),
               //MARK: Title
               Expanded(child: Text(title, style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold))),
-              //MARK: Button
+              //MARK: Get Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
                 onPressed: () {

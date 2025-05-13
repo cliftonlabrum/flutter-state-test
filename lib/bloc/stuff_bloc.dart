@@ -1,4 +1,4 @@
-import 'package:flutter_state_test/global.dart';
+import 'package:flutter_state_test/shared/global.dart';
 
 part 'stuff_event.dart';
 part 'stuff_state.dart';
