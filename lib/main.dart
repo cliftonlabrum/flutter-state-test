@@ -1,5 +1,4 @@
-import 'package:flutter/rendering.dart';
-import 'package:flutter_state_management_comparison/global.dart';
+import 'package:flutter_state_test/global.dart';
 
 void main() {
   //Register watch_it model
@@ -29,20 +28,17 @@ class MyApp extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 1,
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        //MARK: Bloc Widget
-                        WidgetBloc(),
-                        SizedBox(height: 20),
-                        //MARK: Riverpod Widget
-                        WidgetRiverpod(),
-                        SizedBox(height: 20),
-                        //MARK: Watch It Widget
-                        WidgetWatchIt(),
-                      ],
-                    ),
+                  child: Column(
+                    children: [
+                      //MARK: Bloc Widget
+                      WidgetBloc(),
+                      SizedBox(height: 20),
+                      //MARK: Riverpod Widget
+                      WidgetRiverpod(),
+                      SizedBox(height: 20),
+                      //MARK: Watch It Widget
+                      WidgetWatchIt(),
+                    ],
                   ),
                 ),
               ],

@@ -6,6 +6,14 @@ class WidgetRiverpod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stuff(title: 'Riverpod', flag: true, items: [], onPressed: () {});
+    return Stuff(
+      title: 'Riverpod',
+      flag: true,
+      items: [],
+      controller: TextEditingController(text: 'todo'),
+      toggleFlag: () {},
+      onGet: () {},
+      onAdd: () {},
+    );
   }
 }

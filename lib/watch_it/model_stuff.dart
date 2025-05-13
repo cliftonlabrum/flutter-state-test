@@ -1,4 +1,4 @@
-import 'package:flutter_state_management_comparison/global.dart';
+import 'package:flutter_state_test/global.dart';
 
 class ModelStuff with ChangeNotifier {
   //+++
@@ -6,7 +6,7 @@ class ModelStuff with ChangeNotifier {
   //+++
 
   //MARK: Properties
-  //Getters and setters are optional, but they provide a reliable way to ensure the state is altered and updated consistently
+  //Getters and setters are optional, but they provide a reliable way to ensure the state is updated consistently
   String _title = 'Watch It';
   String get title => _title;
   set title(String value) {
@@ -28,13 +28,31 @@ class ModelStuff with ChangeNotifier {
     notifyListeners();
   }
 
+  final controller = TextEditingController();
+
   //MARK: Make Changes
-  changeStuff() async {
+  get() async {
     //Simulate a network request
     items.addAll(MakeItems.go());
 
     //Manually change other stuff
     title = 'Watch It (${items.length})';
     flag = !flag;
+  }
+
+  //MARK: Add Item
+  add() {
+    if (controller.text.isEmpty) return;
+    final item = Item();
+    item.id = 100;
+    item.title = controller.text;
+    item.completed = true;
+
+    List<Item> ready = List.from(items);
+    ready.insert(0, item);
+    //:::
+    items = ready;
+    //Clear textfield
+    controller.text = '';
   }
 }

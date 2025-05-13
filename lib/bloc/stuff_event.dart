@@ -2,10 +2,17 @@ part of 'stuff_bloc.dart';
 
 sealed class StuffEvent {}
 
-final class StuffEventSetStuff extends StuffEvent {
+final class StuffEventSetTitle extends StuffEvent {
   final String? title;
-  final bool? flag;
-  final List<Item>? items;
+  StuffEventSetTitle({this.title});
+}
 
-  StuffEventSetStuff({this.title, this.flag, this.items});
+final class StuffEventSetFlag extends StuffEvent {
+  final bool? flag;
+  StuffEventSetFlag({this.flag});
+}
+
+final class StuffEventSetItems extends StuffEvent {
+  final List<Item>? items;
+  StuffEventSetItems({this.items});
 }

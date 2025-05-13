@@ -1,0 +1,1 @@
+ /Users/clifton.labrum/Dart/flutter-state-test/.dart_tool/flutter_build/0524da30d3e07253e79d9933b42b8a50/native_assets.json: 

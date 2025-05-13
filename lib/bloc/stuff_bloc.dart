@@ -1,4 +1,4 @@
-import 'package:flutter_state_management_comparison/global.dart';
+import 'package:flutter_state_test/global.dart';
 
 part 'stuff_event.dart';
 part 'stuff_state.dart';
@@ -10,16 +10,24 @@ class StuffBloc extends Bloc<StuffEvent, StuffState> {
 
   StuffBloc({this.title = 'Bloc', this.flag = false, this.items = const []})
     : super(StuffState(title: title, flag: flag, items: items)) {
-    on<StuffEventSetStuff>(_onSetStuff);
+    on<StuffEventSetTitle>(_onSetStuffTitle);
+    on<StuffEventSetFlag>(_onSetStuffFlag);
+    on<StuffEventSetItems>(_onSetStuffItems);
   }
 
-  void _onSetStuff(StuffEventSetStuff event, Emitter<StuffState> emit) {
+  void _onSetStuffTitle(StuffEventSetTitle event, Emitter<StuffState> emit) {
+    title = 'Bloc (${items.length})';
+    emit(state.copyWith(title: title, flag: flag, items: items));
+  }
+
+  void _onSetStuffFlag(StuffEventSetFlag event, Emitter<StuffState> emit) {
+    flag = !flag;
+    emit(state.copyWith(title: title, flag: flag, items: items));
+  }
+
+  void _onSetStuffItems(StuffEventSetItems event, Emitter<StuffState> emit) {
     //Simulate a network request that gets some data
     items.addAll(MakeItems.go());
-
-    flag = !flag;
-
-    title = 'Bloc (${items.length})';
 
     emit(state.copyWith(title: title, flag: flag, items: items));
   }

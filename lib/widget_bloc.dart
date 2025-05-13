@@ -1,4 +1,4 @@
-import 'package:flutter_state_management_comparison/global.dart';
+import 'package:flutter_state_test/global.dart';
 
 class WidgetBloc extends StatelessWidget {
   const WidgetBloc({super.key});
@@ -16,8 +16,15 @@ class WidgetBloc extends StatelessWidget {
             title: bloc.title,
             flag: bloc.flag,
             items: bloc.items,
-            onPressed: () {
-              bloc.add(StuffEventSetStuff());
+            controller: TextEditingController(text: 'todo'),
+            toggleFlag: () {
+              bloc.add(StuffEventSetFlag());
+            },
+            onGet: () {
+              bloc.add(StuffEventSetItems());
+            },
+            onAdd: () {
+              //TODO: Get the value from the TextEditingController and add an item to the list
             },
           );
         },
