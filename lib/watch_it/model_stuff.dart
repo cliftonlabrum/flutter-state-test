@@ -30,14 +30,13 @@ class ModelStuff with ChangeNotifier {
 
   final controller = TextEditingController();
 
-  //MARK: Make Changes
+  //MARK: Get Items
   get() async {
     //Simulate a network request
     items.addAll(MakeItems.go());
 
-    //Manually change other stuff
+    //Update the item count in the title
     title = 'Watch It (${items.length})';
-    flag = !flag;
   }
 
   //MARK: Add Item
