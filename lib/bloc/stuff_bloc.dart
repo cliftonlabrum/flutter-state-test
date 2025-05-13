@@ -28,6 +28,8 @@ class StuffBloc extends Bloc<StuffEvent, StuffState> {
   void _onSetStuffItems(StuffEventSetItems event, Emitter<StuffState> emit) {
     //Simulate a network request that gets some data
     items.addAll(MakeItems.go());
+    //Update the item count in the title
+    title = 'Bloc (${items.length})';
 
     emit(state.copyWith(title: title, flag: flag, items: items));
   }
