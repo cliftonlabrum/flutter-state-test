@@ -37,10 +37,7 @@ class StuffBloc extends Bloc<StuffEvent, StuffState> {
   }
 
   void _onSetStuffAddItem(StuffEventAddItem event, Emitter<StuffState> emit) {
-    final item = Item();
-    item.id = 100;
-    item.title = event.addItem;
-    item.completed = true;
+    final item = Item(id: 100, title: event.addItem, completed: true);
     //:::
     items.insert(0, item);
 

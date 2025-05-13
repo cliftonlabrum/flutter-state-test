@@ -1,10 +1,11 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_state_test/shared/global.dart';
 
 void main() {
   //Register watch_it model
   di.registerSingleton<ModelStuff>(ModelStuff());
 
-  runApp(const MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

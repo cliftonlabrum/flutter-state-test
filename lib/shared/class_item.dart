@@ -4,6 +4,7 @@ class Item {
   int id = 0;
   String title = '';
   bool completed = false;
+  Item({required this.id, required this.title, required this.completed});
 
   @override
   toString() {
@@ -18,10 +19,7 @@ class MakeItems {
 
     List<Item> items = [];
     for (var data in jsonData) {
-      final item = Item();
-      item.id = data['id'];
-      item.title = data['title'];
-      item.completed = data['completed'];
+      final item = Item(id: data['id'], title: data['title'], completed: data['completed']);
       items.add(item);
     }
     //:::
