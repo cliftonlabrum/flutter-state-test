@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_test/riverpod/page_model.dart';
 import 'package:flutter_state_test/riverpod/stuff_controller.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import './stuff.dart';
