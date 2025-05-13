@@ -7,16 +7,6 @@ import './stuff.dart';
 class WidgetRiverpod extends ConsumerWidget {
   const WidgetRiverpod({super.key});
 
-  Stuff _stuff(RiverpodPageModel model, StuffController controllerNotifier) => Stuff(
-    title: model.title,
-    flag: model.flag,
-    items: model.items,
-    controller: TextEditingController(),
-    toggleFlag: () => controllerNotifier.toggleFlag(),
-    onGet: () => controllerNotifier.getItems(),
-    onAdd: () => controllerNotifier.add(),
-  );
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(stuffControllerProvider);
