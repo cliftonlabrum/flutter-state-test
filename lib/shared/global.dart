@@ -9,3 +9,5 @@ export '../widget_watch_it.dart';
 export 'class_item.dart';
 export 'dart:convert';
 export '../bloc/stuff_bloc.dart';
+export '../bloc_cubit/stuff_state_2.dart';
+export '../bloc_cubit/stuff_cubit.dart';

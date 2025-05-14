@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_state_test/shared/global.dart';
+import 'package:flutter_state_test/widget_cubit.dart';
 import 'package:flutter_state_test/widget_hooks.dart';
 import 'package:flutter_state_test/widget_riverpod_nogen.dart';
 
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
                       children: [
                         //MARK: Bloc Widget
                         WidgetBloc(),
+                        SizedBox(height: 20),
+                        //MARK: Cubit (Bloc) Widget
+                        WidgetCubit(),
                         SizedBox(height: 20),
                         //MARK: Riverpod Widget
                         WidgetRiverpod(),
