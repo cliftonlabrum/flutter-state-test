@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_state_test/shared/global.dart';
 import 'package:flutter_state_test/widget_hooks.dart';
+import 'package:flutter_state_test/widget_riverpod_nogen.dart';
 
 void main() {
   //Register watch_it model
@@ -41,10 +42,12 @@ class MyApp extends StatelessWidget {
                         SizedBox(height: 20),
                         //MARK: Watch It Widget
                         WidgetWatchIt(),
-
                         SizedBox(height: 20),
                         //MARK: Hooks Widget
                         WidgetHooks(),
+                        SizedBox(height: 20),
+                        //MARK: Riverpod No Generation Widget
+                        WidgetRiverpodNoGen(),
                       ],
                     ),
                   ),
