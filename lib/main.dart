@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_state_test/shared/global.dart';
+import 'package:flutter_state_test/widget_hooks.dart';
 
 void main() {
   //Register watch_it model
@@ -29,17 +30,23 @@ class MyApp extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 1,
-                  child: Column(
-                    children: [
-                      //MARK: Bloc Widget
-                      WidgetBloc(),
-                      SizedBox(height: 20),
-                      //MARK: Riverpod Widget
-                      WidgetRiverpod(),
-                      SizedBox(height: 20),
-                      //MARK: Watch It Widget
-                      WidgetWatchIt(),
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        //MARK: Bloc Widget
+                        WidgetBloc(),
+                        SizedBox(height: 20),
+                        //MARK: Riverpod Widget
+                        WidgetRiverpod(),
+                        SizedBox(height: 20),
+                        //MARK: Watch It Widget
+                        WidgetWatchIt(),
+
+                        SizedBox(height: 20),
+                        //MARK: Hooks Widget
+                        WidgetHooks(),
+                      ],
+                    ),
                   ),
                 ),
               ],
